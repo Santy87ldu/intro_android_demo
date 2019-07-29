@@ -13,6 +13,9 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 public class DemoSelector extends Activity {
 	
@@ -24,6 +27,8 @@ public class DemoSelector extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_demo_selector);
 	    setupChaptersListView();
+		AppCenter.start(getApplication(), "a596eff1-9bbc-435e-9e63-08535c714862",
+                  Analytics.class, Crashes.class);
 	}
 
 	@Override
